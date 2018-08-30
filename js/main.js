@@ -1,5 +1,5 @@
 	// Create a list that holds all of your cards
-var cardNames = ['one', 'one', 'two', 'two', 'three', 'three', 'four', 'four','five', 'five', 'six', 'six', 'seven', 'seven', 'eight', 'eight'];
+const cardNames = ['one', 'one', 'two', 'two', 'three', 'three', 'four', 'four','five', 'five', 'six', 'six', 'seven', 'seven', 'eight', 'eight'];
 	// This list is JUST holding string names. The actual card elements/buttons are listed below.
 const cardButtons = document.getElementsByClassName('card');
 
@@ -148,11 +148,11 @@ function closeCards() {
 
 function winGame() {
 	setTimeout(function(){
-			alert(`Congratulations! You won the game in ${movesCounter} moves!`);
+			document.getElementById('winModal').classList.remove('hiddenModal');
 		}, 1000);
 }
 
-	//JS for Refresh button
+	//TODO - Make it reload certain content, NOT refresh the entire page
 function refreshPage() {
 	window.location.reload();
 }
@@ -172,7 +172,7 @@ function increaseMoves() {
 	if (movesCounter === 18) {
 		document.querySelector('.fa-star').remove();
 	}
-	if (movesCounter === 2) {
+	if (movesCounter === 20) {
 		document.querySelector('.fa-star').remove();
 		gameOver();
 	}
@@ -185,9 +185,11 @@ function gameOver() {
 	let playAgain = confirm("GAME OVER! Would you like to play again?");
 	if (playAgain == true) {
 		refreshPage();
-	} else {
-		window.close();
 	}
 	}, 2000);
 	
+}
+
+function hideModal() {
+	document.getElementById('winModal').classList.add('hiddenModal');
 }
