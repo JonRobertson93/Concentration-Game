@@ -77,9 +77,12 @@ h1 {
 }
 
 .match {
-    cursor: default;
-    background-color: black;
-    font-size: 33px;
+    background: #2ace9d !important;
+    font-size: 33px !important;
+}
+
+.notMatch {
+	background: red !important;
 }
 
 .hide {
