@@ -6,7 +6,8 @@
     <meta name="description" content="">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css\main.css">
+    <link rel="stylesheet" href="css\animate.css"
 </head>
 <body>
 
@@ -22,10 +23,10 @@
         		<li><i class="fa fa-star"></i></li>
         	</ul>
 
-        	<span class="moves">3</span> Moves
+        	<span id="moves">0</span> <span id="moveOrMoves"> Moves </span>
 
             <div class="restart">
-        		<i class="fa fa-repeat"></i>
+        		<span onClick="refreshPage()"><i class="fa fa-repeat"></i> Restart Game </span>
         	</div>
         </section>
 
@@ -34,6 +35,6 @@
         </ul>
     </div>
 
-    <script src="main.js"></script>
+    <script src="js\main.js"></script>
 </body>
 </html>
