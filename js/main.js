@@ -34,7 +34,7 @@ function createCards(){
 		let deck = document.querySelector('.deck');
 		let liElement = document.createElement('li');
 		let cardName = cardNames[i];
-		liElement.innerHTML = '#' + cardName;
+		liElement.innerHTML = `<img class="hideImage" src="icons/${cardName}.png">`;
 		deck.appendChild(liElement);
 		liElement.classList.add("card", cardNames[i]);
 		liElement.addEventListener('click', openCard); 
@@ -44,7 +44,10 @@ function createCards(){
 
 
 function openCard(e) {	//(e) is the element that was clicked - a card tile
-	e.target.classList.add('show', 'open', 'bounceIn');		// adding these 3 classes to display the "front" of the clicked card & animate the flip
+	e.target.classList.add('open', 'bounceIn');		// adding these 3 classes to display the "front" of the clicked card & animate the flip
+	let icon = e.target.children[0];
+	icon.classList.remove('hideImage');
+	icon.classList.add('showImage');
 	openCardsList.push(e.target);
 	checkForMatch(e);
 }
@@ -69,7 +72,7 @@ function checkForMatch(e) {
 		} else {		// if the cards don't match...
 			pairDoesNotMatch();
 		}
-		increaseMoves();
+		checkForWin();
 
 		}
 	}	
@@ -99,13 +102,14 @@ function matchAnimation() {
 			}
 		currentPairList = [];
 		openCardsList = [];
-		checkForWin();
 		}, 1000);
 }
 
 function checkForWin(){
 	if (matches.length === 16) {
 			winGame();
+	} else {
+		increaseMoves();
 	}
 }
 
@@ -129,8 +133,14 @@ function animateMismatch() {
 function closeCards() {	
 				// Hide the cards
 			setTimeout(function() {
-			openCardsList[0].classList.remove('show', 'open','notMatch', 'animated', 'wobble');
-			openCardsList[1].classList.remove('show', 'open','notMatch', 'animated', 'wobble');	
+			openCardsList[0].classList.remove('open','notMatch', 'animated', 'wobble');
+			openCardsList[1].classList.remove('open','notMatch', 'animated', 'wobble');	
+			let iconOne = openCardsList[0].children[0];
+			iconOne.classList.add('hideImage');
+			iconOne.classList.remove('showImage');
+			let iconTwo = openCardsList[1].children[0];
+			iconTwo.classList.add('hideImage');
+			iconTwo.classList.remove('showImage');
 				// Allow the cards to be clicked again
 			for (let i=0; i<cardButtons.length; i++) {
 				cardButtons[i].addEventListener('click', openCard);
