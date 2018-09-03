@@ -14,11 +14,11 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Baloo Tammudu', cursive;
 }
 
 body {
-    /*background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+    
 }
 
 .container {
@@ -30,7 +30,7 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
+	margin-top: 2em;
     font-weight: 300;
 }
 
@@ -50,13 +50,27 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin: 0 0 3em;
+
+}
+
+.hideImage {
+	display: none;
+}
+
+.showImage {
+	background: transparent;
+	border-radius: 8px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 .deck .card {
     height: 140px;
-    width: 140px;
+    width: 140px; 
     background: #2e3d49;
-    font-size: 0;
+    font-size: 0;	/* This property is how we hide the text in our card */
     color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
@@ -67,13 +81,13 @@ h1 {
 }
 
 .deck .card.open {
-    transform: rotateY(0);
-    background: #02b3e4;
+	background: #557996;
     cursor: default;
+    font-size: 33px;
 }
 
-.deck .card.show {
-    font-size: 33px;
+.showIcon {
+	display: inherit;
 }
 
 .match {
@@ -85,19 +99,17 @@ h1 {
 	background: red !important;
 }
 
-.hide {
-    background-color: black;
-    color: black;
-}
-
 /*
  * Styles for the Score Panel
  */
 
 .score-panel {
+	font-size: 120%;
     text-align: left;
-    width: 345px;
-    margin-bottom: 10px;
+    width: 50%;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 .score-panel .stars {
@@ -115,4 +127,29 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+.winModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%
+  height: 80%;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1em;
+  text-align: center;
+  font-size: 120%;
+  font-weight: bold;
+  background: linear-gradient(to top, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 35%,rgba(160,216,239,1) 100%);
+}
+
+.hiddenModal {
+	display: none;
+}
+
+.modalButton {
+	padding: .5em;
+	margin: .5em;
 }
