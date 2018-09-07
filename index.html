@@ -3,50 +3,46 @@
 <head>
     <meta charset="utf-8">
     <title>The Game of Concentration!</title>
-    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
    <!--  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda"> -->
     <link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
-
     <div class="container">
-        <header>
+        <header class="hidden mainHeading">
             <h1>THE GAME OF CONCENTRATION</h1>
         </header>
 
-        <section class="score-panel">
-            <div>
-            	<ul class="stars">
-            		<li><i class="fa fa-star"></i></li>
-            		<li><i class="fa fa-star"></i></li>
-            		<li><i class="fa fa-star"></i></li>
-            	</ul>
-            	<span id="moves">0</span> <span id="moveOrMoves"> Moves </span>
+        <div id="deckAndModals">
+            <section class="score-panel hidden">
+            <ul class="stars">
+                <li><i class="fa fa-star" id="stars"></i></li>
+                <li><i class="fa fa-star" id="stars"></i></li>
+                <li><i class="fa fa-star" id="stars"></i></li>
+            </ul>
+            <div class="moves">
+                <span id="moves">0 </span> <span id="moveOrMoves"> Moves</span>
             </div>
-            
-             <div class="timer" id="time">Time: </div>
+     
+            <div class="timer">
+                <span id="mins">Time 0: 00</span>
+                <span id="secs"></span>
+            </div>
 
-            <div class="restart">
-        		<span onClick="refreshPage()"><i class="fa fa-repeat"></i> Restart Game </span>
-        	</div>
+            <div id="restart">
+                <span><i class="fa fa-repeat"></i>Restart</span>
+            </div>
         </section>
-
-        <ul class="deck">
-            
-        </ul>
-    </div>
-
-    <div class="winModal hiddenModal" id="winModal">
-        <h2> YOU WON! CONGRATULATIONS!! </h2>
-        <p> You beat the game in # turns in just # mins:seconds! </p>
-        <p> Would you like to play again? </p>
-        <button class="modalButton" onClick="refreshPage()"> Yes </button>
-        <button class="modalButton" onClick="hideModal()"> No </button>
-    </div>
+            <ul class="deck">
+            </ul>
+            <div class="winLoseModal hidden" id="winModal"></div>
+            <div class="winLoseModal hidden" id="loseModal"></div>
+        </div>
+    </div>  
     <script src="js/main.js"></script>
-    <!-- TODO - GET TIMER TO WORK!! <script src="js/easytimer.min.js"></script> -->
 </body>
 </html>

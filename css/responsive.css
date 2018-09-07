@@ -1,0 +1,75 @@
+@media screen and (min-width: 420px) {
+	#deckAndModals {
+		height: 475px;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	#deckAndModals {
+		height: 575px;
+	}
+	.score-panel {
+		font-size: 82%;
+	}
+	.mainHeading {
+		font-size: 140%;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	#deckAndModals {
+		height: 630px;
+	}
+}
+
+@media screen and (min-width: 650px) {
+	.card {
+		height: 21%;
+		width: 21%;
+	}
+}
+@media screen and (min-width: 775px) {
+	.card {
+		height: 23%;
+	}
+	.mainHeading {
+		font-size: 160%;
+	}
+}
+@media screen and (min-width: 880px) {
+	#deckAndModals {
+		width: 72%;
+	}
+	.score-panel {
+		font-size: 100%;
+	}
+	.winLoseModal {
+		width: 60%;
+		font-size: 100%;
+	}
+}
+
+@media screen and (min-width: 950px) {
+	.card {
+		width: 18.5%;
+		height: 23.5%;
+		margin-right: 1.2%;
+	}
+	.mainHeading {
+		font-size: 180%;
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	#deckAndModals {
+		width: 66%;
+	}
+	.card {
+		width: 19%;
+		height: 24.5%;
+	}
+	.winLoseModal {
+		width: 580px;
+		font-size: 120%;
+	}
+}
