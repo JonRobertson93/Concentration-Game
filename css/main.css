@@ -15,12 +15,18 @@ body {
   	margin: 0;
     padding: 0;
     font-family: 'Baloo Tammudu', cursive;
-    background: linear-gradient(to bottom, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 35%,rgba(160,216,239,1) 100%);
+    background: #d3e4d3;
     background-size: cover;
 }
 
-.mainHeading {
+h1 {
+	margin-top: 1em;
+    font-weight: 300;
+    font-size: 100%;
+}
 
+h2 {
+	font-size: 105%;
 }
 
 #welcomeHeading {
@@ -40,7 +46,7 @@ body {
 }
 
 .welcomeButtons {
-	
+	font-size: 60%;
 	width: 30%;
 	margin: 1%;
 	padding: 1.5%;
@@ -88,86 +94,8 @@ body {
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-}
-
-h1 {
-	margin-top: 1em;
-    font-weight: 300;
-    font-size: 100%;
-}
-
-h2 {
-	font-size: 105%;
-}
-
-/*
- * Styles for the deck of cards
- */
-
-#deckAndModals {
-	margin-top: 30px;
-    width: 85%;
-    height: 400px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
-    border-radius: .2em;
-    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.deck {
-	text-align: center;
- 	width: 100%;
-    height: 87%;
-    padding: 3%;
-    margin-top: -10%;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.hideImage {
-	display: none;
-}
-
-.showImage {
-	background: transparent;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-}
-
-.card {
-	list-style: none;
-    width: 22%;
-    height: 19%;
-    margin: 1%;
-    background: #2e3d49;
-    color: #ffffff;
-    border-radius: 8%;
-    cursor: pointer;
-   /* display: flex;*/
-    font-size: 33px;
-    /*justify-content: space-around;
-    align-items: center;*/
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
-}
-
-.open {
-	background: #3a85ff !important;
-    cursor: default; 
-}
-
-.match {
-    background: #2ace9d !important;
-}
-
-.notMatch {
-	background: red !important;
+    background: #d3e4d3;
+    background-size: cover;
 }
 
 /*
@@ -216,6 +144,80 @@ h2 {
 	width: 20%;
 }
 
+/*
+ * Styles for the deck of cards
+ */
+
+.hidden {
+	display: none !important;
+}
+
+#deckAndModals {
+	margin-top: 30px;
+    width: 85%;
+    height: 400px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    border-radius: .2em;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.deck {
+	text-align: center;
+ 	width: 100%;
+    height: 87%;
+    padding: 3%;
+    margin-top: -10%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+	padding: 1%;
+	list-style: none;
+    width: 22%;
+    height: 19%;
+    margin: 1%;
+    background: #2e3d49;
+    color: #ffffff;
+    border-radius: 8%;
+    cursor: pointer;
+    font-size: 33px;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.open {
+	background: #c7c8c8 !important;
+    cursor: default; 
+}
+
+.match {
+    background: #1fa807 !important;
+}
+
+.notMatch {
+	background: #e81818 !important;
+}
+
+.hideImage {
+	display: none;
+}
+
+.showImage {
+	background: transparent;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+	/*Modal Styling*/
+
 .winLoseModal {
 	opacity: 0.9;
 	width: 63.8%;
@@ -228,9 +230,7 @@ h2 {
 	background: linear-gradient(to top, rgba(254,255,255,1) 0%,rgba(221,241,249,1) 35%,rgba(160,216,239,1) 100%);
 }
 
-.hidden {
-	display: none;
-}
+
 
 .modalButton {
 	padding: .5em 1em .5em 1em;
@@ -246,3 +246,7 @@ h2 {
 	background: #729989;
 }
 
+.invisible {
+	position: absolute;
+	left: -5000px;
+}
