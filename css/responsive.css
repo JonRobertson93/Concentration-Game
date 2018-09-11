@@ -35,6 +35,9 @@
 	.mainHeading {
 		font-size: 160%;
 	}
+	.welcomeButtons {
+		font-size: 70%;
+	}
 }
 @media screen and (min-width: 880px) {
 	#deckAndModals {
@@ -57,6 +60,9 @@
 	}
 	.mainHeading {
 		font-size: 180%;
+	}
+	.welcomeButtons {
+		font-size: 75%;
 	}
 }
 

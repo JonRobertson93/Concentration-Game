@@ -5,39 +5,56 @@
     <title>The Game of Concentration!</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-   <!--  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda"> -->
     <link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
+    <embed class="invisible" src="music/weBelongInAMovie.mp3">
+    
     <div class="container">
         <header class="hidden mainHeading">
             <h1>THE GAME OF CONCENTRATION</h1>
         </header>
 
-        <div id="deckAndModals">
+        <div id="deckAndModals">    <!-- Contains card deck and win/lose modals -->
             <section class="score-panel hidden">
-            <ul class="stars">
-                <li><i class="fa fa-star" id="stars"></i></li>
-                <li><i class="fa fa-star" id="stars"></i></li>
-                <li><i class="fa fa-star" id="stars"></i></li>
-            </ul>
-            <div class="moves">
-                <span id="moves">0 </span> <span id="moveOrMoves"> Moves</span>
-            </div>
-     
-            <div class="timer">
-                <span id="mins">Time 0: 00</span>
-                <span id="secs"></span>
-            </div>
+                <ul class="stars">
+                    <li><i class="fa fa-star" id="stars"></i></li>
+                    <li><i class="fa fa-star" id="stars"></i></li>
+                    <li><i class="fa fa-star" id="stars"></i></li>
+                </ul>
+                <div class="moves">
+                    <span id="moves">0 </span> <span id="moveOrMoves"> Moves</span>
+                </div>
+         
+                <div class="timer">
+                    <span id="mins">Time 0: 00</span>
+                    <span id="secs"></span>
+                </div>
 
-            <div id="restart">
-                <span><i class="fa fa-repeat"></i>Restart</span>
-            </div>
-        </section>
+                <div id="restart">
+                    <span><i class="fa fa-repeat"></i>Restart</span>
+                </div>
+            </section>
+
             <ul class="deck">
+                <div id="welcome">      <!-- Welcome screen/div inside of our deck container, before the deck itself is built -->
+                    <h1 id="welcomeHeading"> The Game of Concentration </h1>
+                    <div id="easyMedHard">
+                        <h2> Pick your difficulty level: </h2>
+                        <button class="welcomeButtons" onClick="easyDifficulty()">EASY</button>
+                        <button class="welcomeButtons" onClick="mediumDifficulty()">MEDIUM</button>
+                        <button class="welcomeButtons" onClick="hardDifficulty()">HARD</button>
+                    </div>
+                    <div id="pickTheme"class="hidden">
+                        <h2> Now pick what characters you want to play with: </h2>
+                        <button class="welcomeButtons" onClick="videoGamesTheme()">VIDEO GAMES</button>
+                        <button class="welcomeButtons" onClick="disneyTheme()">DISNEY</button>
+                        <button class="welcomeButtons" onClick="pokemonTheme()">POKEMON</button>
+                    </div>
+                </div>
             </ul>
             <div class="winLoseModal hidden" id="winModal"></div>
             <div class="winLoseModal hidden" id="loseModal"></div>
